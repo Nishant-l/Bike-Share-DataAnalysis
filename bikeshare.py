@@ -190,7 +190,7 @@ def main():
         user_stats(df)
 
 
-        print_raw_input=input('Would you like to print raw data(YES/NO)',).lower()
+        print_raw_input=input('Would you like to print raw data(yes/no)',).lower()
         if print_raw_input == 'yes':
             print(df.loc[0:4])
         kk=int(df.shape[0])
