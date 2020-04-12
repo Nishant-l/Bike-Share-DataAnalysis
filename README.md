@@ -1,15 +1,18 @@
 ### Date created
-Include the date you created this project and README file.
+This project was created on **11-April-2020**
 
 ### Project Title
-Replace the Project Title
+**Bike-Share DataAnalysis**
 
 ### Description
-Describe what your project is about and what it does
+Analysis of BikeShareData with interactive interface
+
 
 ### Files used
-Include the files used
+1. bikeshare.py
+2. chicago.csv
+3. new_york_city.csv
+4. washingtone.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+created as a project for Udacity NanoDegree
