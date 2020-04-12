@@ -1,11 +1,11 @@
 ### Date created
-This project was created on **11-April-2020**
+This project was created on **12-April-2020**
 
 ### Project Title
 **Bike-Share DataAnalysis**
 
 ### Description
-Analysis of BikeShareData with interactive interface
+Analysis of Bike-Share-Data with interactive interface
 
 
 ### Files used
