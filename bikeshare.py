@@ -38,8 +38,8 @@ def get_filters():
             month='all'
         else:
             month=month_input
-    
-     
+
+
     # get user input for day of week (all, monday, tuesday, ... sunday)
     days_input=''
     while days_input not in check_day:
@@ -71,12 +71,12 @@ def load_data(city, month, day):
     df['month']=df['Start Time'].dt.month
     df['day_of_week']=df['Start Time'].dt.weekday_name
     if month!='all':
-        
+
         month=months.index(month)+1
         df=df[df['month']==month]
     if day!='all':
         df=df[df['day_of_week']==day.title()]
-        
+
     return df
 
 
@@ -89,7 +89,7 @@ def time_stats(df):
     # display the most common month
     print("* Most Common Month-------->")
     print(' '*25,df['month'].mode()[0])
-      
+
     # display the most common day of week
     print("* Most Common Day Of Week-->")
     #print(str(df['day_of_week']).mode()[0])
@@ -113,7 +113,7 @@ def station_stats(df):
     # display most commonly used start station
     print("* Most Common Start Station-->")
     print(' '*24,df['Start Station'].mode()[0])
-    
+
     # display most commonly used end station
     print("* Most Common End Station---->")
     print(' '*24,df['End Station'].mode()[0])
@@ -157,22 +157,22 @@ def user_stats(df):
 
     # Display counts of user types
     user_type_count=df.groupby(['User Type'])['User Type'].count()
-    print('counts of user type-----')
+    print('counts of user type----->')
     print(user_type_count)
-    
-    
+
+
     if check=='chicago' or check=='new york city':
         # Display counts of gender
         gender_counts=df.groupby(['Gender'])['Gender'].count()
         print('counts of Gender type-----')
         print(gender_counts)
-        
+
         # Display earliest, most recent, and most common year of birth
         temp=pd.DataFrame(df,columns=['Birth Year'])
         print('Most Recent Birth Year   -->',temp.max())
         print('Most Earliest Birth Year -->',temp.min())
         print('Most common Year Of Birth-->',temp['Birth Year'].mode()[0])
-        
+
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -188,21 +188,21 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
-        
-        print_raw_input=input('Would you like to print raw data(YES/NO)',).lower()
+
+
+        print_raw_input=input('Would you like to print raw data(yes/no)',).lower()
         if print_raw_input == 'yes':
             print(df.loc[0:4])
         kk=int(df.shape[0])
-        
+
         for i in range(5,kk,5):
             print_next=input('Would You like to print next five raw data(Yes/No)').lower()
             if print_next == 'yes':
                 print(df.loc[i:i+4])
             else:
                 break
-            
-       
+
+
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
